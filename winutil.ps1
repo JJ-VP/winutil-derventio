@@ -3078,7 +3078,7 @@ function Invoke-WPFButton {
     # Use this to get the name of the button
     #[System.Windows.MessageBox]::Show("$Button","Chris Titus Tech's Windows Utility","OK","Info")
 
-    $jsonFile = Get-Content .\derventio.json -Raw | ConvertFrom-Json
+    $jsonFile = Get-Content https://github.com/JJ-VP/winutil-derventio/raw/main/derventio.json -Raw | ConvertFrom-Json
 
     $derventio = @()
     $jsonFile.PSObject.Properties | ForEach-Object {
@@ -4046,18 +4046,18 @@ function Invoke-WPFInstallKaspersky {
     }
 
     Write-Host "Downloading Kaspersky installer..."
-    $url = "https://github.com/JJ-VP/winutil-derventio/raw/main/data/kes_win.msi"
+    $url = "https://github.com/JJ-VP/winutil-derventio-old/raw/main/data/kes_win.msi"
     $out = "$DHT\kes_win.msi"
     invoke-WebRequest -Uri $url -OutFile $out
 
     Write-Host "Downloading required files..."
-    $url = "https://github.com/JJ-VP/winutil-derventio/raw/main/data/bases.cab"
+    $url = "https://github.com/JJ-VP/winutil-derventio-old/raw/main/data/bases.cab"
     $out = "$DHT\bases.cab"
     invoke-WebRequest -Uri $url -OutFile $out
-    $url = "https://github.com/JJ-VP/winutil-derventio/raw/main/data/kes.cab"
+    $url = "https://github.com/JJ-VP/winutil-derventio-old/raw/main/data/kes.cab"
     $out = "$DHT\kes.cab"
     invoke-WebRequest -Uri $url -OutFile $out
-    $url = "https://github.com/JJ-VP/winutil-derventio/raw/main/data/aes56.cab"
+    $url = "https://github.com/JJ-VP/winutil-derventio-old/raw/main/data/aes56.cab"
     $out = "$DHT\aes56.cab"
     invoke-WebRequest -Uri $url -OutFile $out
 
@@ -4078,17 +4078,17 @@ function Invoke-WPFInstallSettings {
     }
 
     Write-Host "Downloading wallpaper..."
-    $bgurl = "https://github.com/JJ-VP/winutil-derventio/raw/main/data/Background.jpg"
+    $bgurl = "https://github.com/JJ-VP/winutil-derventio-old/raw/main/data/Background.jpg"
     $bgout = "$DHT\Background.jpg"
     invoke-WebRequest -Uri $bgurl -OutFile $bgout
 
     Write-Host "Downloading Brave Config..."
-    $braveurl = "https://github.com/JJ-VP/winutil-derventio/raw/main/data/Brave.reg"
+    $braveurl = "https://github.com/JJ-VP/winutil-derventio-old/raw/main/data/Brave.reg"
     $braveout = "$DHT\Brave.reg"
     invoke-WebRequest -Uri $braveurl -OutFile $braveout
 
     Write-Host "Downloading Windows 11 Config..."
-    $winurl = "https://github.com/JJ-VP/winutil-derventio/raw/main/data/win11.reg"
+    $winurl = "https://github.com/JJ-VP/winutil-derventio-old/raw/main/data/win11.reg"
     $winout = "$DHT\win11.reg"
     invoke-WebRequest -Uri $winurl -OutFile $winout
 
@@ -4205,7 +4205,7 @@ function Invoke-WPFInstallVPN {
         Write-Host "Folder created..."
     }
 
-    $url = "https://github.com/JJ-VP/winutil-derventio/raw/main/data/rootca.crt"
+    $url = "https://github.com/JJ-VP/winutil-derventio-old/raw/main/data/rootca.crt"
     $out = "$DHT\rootca.crt"
     invoke-WebRequest -Uri $url -OutFile $out
     Import-Certificate -FilePath $out -CertStoreLocation cert:\LocalMachine\root
