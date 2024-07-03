@@ -14,18 +14,6 @@ function Invoke-WPFButton {
 
     # Use this to get the name of the button
     #[System.Windows.MessageBox]::Show("$Button","Chris Titus Tech's Windows Utility","OK","Info")
-
-    $jsonFile = Get-Content https://github.com/JJ-VP/winutil-derventio/raw/main/derventio.json -Raw | ConvertFrom-Json
-
-    $derventio = @()
-    $jsonFile.PSObject.Properties | ForEach-Object {
-        $category = $_.Name
-        foreach ($checkboxName in $_.Value) {
-            if ($category -ne "Install") {
-                $derventio += $checkboxName
-            }
-        }
-    }
     
     Switch -Wildcard ($Button){
 
@@ -37,7 +25,24 @@ function Invoke-WPFButton {
         "WPFminimal" {Invoke-WPFPresets "Minimal"}
         "WPFclear" {Invoke-WPFPresets -preset $null -imported $true}
         "WPFclearWinget" {Invoke-WPFPresets -preset $null -imported $true -CheckBox "WPFInstall"}
-        "WPFDerventio" {Invoke-WPFPresets -preset $derventio -imported $true}
+        "WPFDerventio" {
+            $url = "https://github.com/JJ-VP/winutil-derventio/raw/main/derventio.json"
+            $out = "$env:TEMP\derventio.json"
+            invoke-WebRequest -Uri $url -OutFile $out
+
+            $jsonFile = Get-Content "$env:TEMP\derventio.json" -Raw | ConvertFrom-JSON
+
+            $derventio = @()
+            $jsonFile.PSObject.Properties | ForEach-Object {
+                $category = $_.Name
+                foreach ($checkboxName in $_.Value) {
+                    if ($category -ne "Install") {
+                        $derventio += $checkboxName
+                    }
+                }
+            }
+            Invoke-WPFPresets -preset $derventio -imported $true
+        }
         "WPFtweaksbutton" {Invoke-WPFtweaksbutton}
         "WPFOOSUbutton" {Invoke-WPFOOSU}
         "WPFAddUltPerf" {Invoke-WPFUltimatePerformance -State "Enable"}
