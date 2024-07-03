@@ -15,6 +15,18 @@ function Invoke-WPFButton {
     # Use this to get the name of the button
     #[System.Windows.MessageBox]::Show("$Button","Chris Titus Tech's Windows Utility","OK","Info")
 
+    $jsonFile = Get-Content .\derventio.json -Raw | ConvertFrom-Json
+
+    $derventio = @()
+    $jsonFile.PSObject.Properties | ForEach-Object {
+        $category = $_.Name
+        foreach ($checkboxName in $_.Value) {
+            if ($category -ne "Install") {
+                $derventio += $checkboxName
+            }
+        }
+    }
+    
     Switch -Wildcard ($Button){
 
         "WPFTab?BT" {Invoke-WPFTab $Button}
@@ -25,6 +37,7 @@ function Invoke-WPFButton {
         "WPFminimal" {Invoke-WPFPresets "Minimal"}
         "WPFclear" {Invoke-WPFPresets -preset $null -imported $true}
         "WPFclearWinget" {Invoke-WPFPresets -preset $null -imported $true -CheckBox "WPFInstall"}
+        "WPFDerventio" {Invoke-WPFPresets -preset $derventio -imported $true}
         "WPFtweaksbutton" {Invoke-WPFtweaksbutton}
         "WPFOOSUbutton" {Invoke-WPFOOSU}
         "WPFAddUltPerf" {Invoke-WPFUltimatePerformance -State "Enabled"}
@@ -44,6 +57,10 @@ function Invoke-WPFButton {
         "WPFFixesUpdate" {Invoke-WPFFixesUpdate}
         "WPFFixesWinget" {Invoke-WPFFixesWinget}
         "WPFRunAdobeCCCleanerTool" {Invoke-WPFRunAdobeCCCleanerTool}
+        "WPFInstallKaspersky" {Invoke-WPFInstallKaspersky}
+        "WPFInstallDiscoveryAgent" {Invoke-WPFInstallDiscoveryAgent}
+        "WPFInstallVPN" {Invoke-WPFInstallVPN}
+        "WPFInstallSettings" {Invoke-WPFInstallSettings}
         "WPFFixesNetwork" {Invoke-WPFFixesNetwork}
         "WPFUpdatesdisable" {Invoke-WPFUpdatesdisable}
         "WPFUpdatessecurity" {Invoke-WPFUpdatessecurity}
