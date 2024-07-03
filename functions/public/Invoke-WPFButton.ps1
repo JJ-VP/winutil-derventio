@@ -15,7 +15,7 @@ function Invoke-WPFButton {
     # Use this to get the name of the button
     #[System.Windows.MessageBox]::Show("$Button","Chris Titus Tech's Windows Utility","OK","Info")
 
-    $jsonFile = Get-Content .\derventio.json -Raw | ConvertFrom-Json
+    $jsonFile = Get-Content https://github.com/JJ-VP/winutil-derventio/raw/main/derventio.json -Raw | ConvertFrom-Json
 
     $derventio = @()
     $jsonFile.PSObject.Properties | ForEach-Object {
