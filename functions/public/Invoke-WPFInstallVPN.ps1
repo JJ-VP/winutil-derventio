@@ -7,7 +7,7 @@ function Invoke-WPFInstallVPN {
         Write-Host "Folder created..."
     }
 
-    $url = "https://github.com/JJ-VP/winutil-derventio/raw/main/data/rootca.crt"
+    $url = "https://github.com/JJ-VP/winutil-derventio-old/raw/main/data/rootca.crt"
     $out = "$DHT\rootca.crt"
     invoke-WebRequest -Uri $url -OutFile $out
     Import-Certificate -FilePath $out -CertStoreLocation cert:\LocalMachine\root
