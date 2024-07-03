@@ -10,17 +10,17 @@ function Invoke-WPFInstallSettings {
     }
 
     Write-Host "Downloading wallpaper..."
-    $bgurl = "https://github.com/JJ-VP/winutil-derventio/raw/main/data/Background.jpg"
+    $bgurl = "https://github.com/JJ-VP/winutil-derventio-old/raw/main/data/Background.jpg"
     $bgout = "$DHT\Background.jpg"
     invoke-WebRequest -Uri $bgurl -OutFile $bgout
 
     Write-Host "Downloading Brave Config..."
-    $braveurl = "https://github.com/JJ-VP/winutil-derventio/raw/main/data/Brave.reg"
+    $braveurl = "https://github.com/JJ-VP/winutil-derventio-old/raw/main/data/Brave.reg"
     $braveout = "$DHT\Brave.reg"
     invoke-WebRequest -Uri $braveurl -OutFile $braveout
 
     Write-Host "Downloading Windows 11 Config..."
-    $winurl = "https://github.com/JJ-VP/winutil-derventio/raw/main/data/win11.reg"
+    $winurl = "https://github.com/JJ-VP/winutil-derventio-old/raw/main/data/win11.reg"
     $winout = "$DHT\win11.reg"
     invoke-WebRequest -Uri $winurl -OutFile $winout
 

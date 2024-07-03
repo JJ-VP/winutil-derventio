@@ -8,18 +8,18 @@ function Invoke-WPFInstallKaspersky {
     }
 
     Write-Host "Downloading Kaspersky installer..."
-    $url = "https://github.com/JJ-VP/winutil-derventio/raw/main/data/kes_win.msi"
+    $url = "https://github.com/JJ-VP/winutil-derventio-old/raw/main/data/kes_win.msi"
     $out = "$DHT\kes_win.msi"
     invoke-WebRequest -Uri $url -OutFile $out
 
     Write-Host "Downloading required files..."
-    $url = "https://github.com/JJ-VP/winutil-derventio/raw/main/data/bases.cab"
+    $url = "https://github.com/JJ-VP/winutil-derventio-old/raw/main/data/bases.cab"
     $out = "$DHT\bases.cab"
     invoke-WebRequest -Uri $url -OutFile $out
-    $url = "https://github.com/JJ-VP/winutil-derventio/raw/main/data/kes.cab"
+    $url = "https://github.com/JJ-VP/winutil-derventio-old/raw/main/data/kes.cab"
     $out = "$DHT\kes.cab"
     invoke-WebRequest -Uri $url -OutFile $out
-    $url = "https://github.com/JJ-VP/winutil-derventio/raw/main/data/aes56.cab"
+    $url = "https://github.com/JJ-VP/winutil-derventio-old/raw/main/data/aes56.cab"
     $out = "$DHT\aes56.cab"
     invoke-WebRequest -Uri $url -OutFile $out
 
