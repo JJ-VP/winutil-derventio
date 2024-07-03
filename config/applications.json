@@ -1287,6 +1287,14 @@
 		"link": "https://github.com/szTheory/exifcleaner",
 		"winget": "szTheory.exifcleaner"
 	},
+	"microsoftOffice": {
+		"category": "Microsoft Tools",
+		"choco": "",
+		"content": "Office 365",
+		"description": "Microsoft Office 365.",
+		"link": "https://musescore.org/en",
+		"winget": "Microsoft.Office"
+	},
 	"mullvadbrowser": {
 		"category": "Browsers",
 		"choco": "na",
