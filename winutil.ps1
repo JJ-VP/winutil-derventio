@@ -4346,7 +4346,7 @@ function Invoke-WPFInstallDiscoveryAgent {
     }
 
     Write-Host "Downloading FreshService installer..."
-    $url = "https://github.com/JJ-VP/winutil-derventio/raw/main/data/agent.msi"
+    $url = "https://github.com/JJ-VP/winutil-derventio-old/raw/main/data/agent.msi"
     $out = "$DHT\agent.msi"
     invoke-WebRequest -Uri $url -OutFile $out
 
@@ -4487,7 +4487,7 @@ function Invoke-WPFInstallSettings {
     reg import $braveout
 
     Write-Host "Updating group policy..."
-    Invoke-GPUpdate
+    GPUpdate
     
     Write-Host "Derventio Preferences Setup!"
 }
