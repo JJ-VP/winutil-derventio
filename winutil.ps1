@@ -9217,28 +9217,32 @@ $sync.configs.feature = '{
     "category": "Fixes",
     "panel": "1",
     "Order": "a046_",
-    "Type": "300"
+    "type": "Button",
+    "ButtonWidth": "300"
   },
   "WPFInstallDiscoveryAgent": {
     "Content": "Install FreshService Agent",
     "category": "Fixes",
     "panel": "1",
     "Order": "a047_",
-    "Type": "300"
+    "type": "Button",
+    "ButtonWidth": "300"
   },
   "WPFInstallVPN": {
     "Content": "Install VPN",
     "category": "Fixes",
     "panel": "1",
     "Order": "a048_",
-    "Type": "300"
+    "type": "Button",
+    "ButtonWidth": "300"
   },
   "WPFInstallSettings": {
     "Content": "Derventio Settings",
     "category": "Fixes",
     "panel": "1",
     "Order": "a049_",
-    "Type": "300"
+    "type": "Button",
+    "ButtonWidth": "300"
   },
   "WPFPanelnetwork": {
     "Content": "Network Connections",
@@ -15158,10 +15162,10 @@ $inputXML =  '<Window x:Class="WinUtility.MainWindow"
                             <Button Name="WPFPanelDISM" Content="System Corruption Scan" HorizontalAlignment="Left" Margin="5" Padding="20,5" Width="300"/>
                             <Button Name="WPFFixesWinget" Content="WinGet Reinstall" HorizontalAlignment="Left" Margin="5" Padding="20,5" Width="300"/>
                             <Button Name="WPFRunAdobeCCCleanerTool" Content="Remove Adobe Creative Cloud" HorizontalAlignment="Left" Margin="5" Padding="20,5" Width="300"/>
-                            <CheckBox Name="WPFInstallKaspersky" Content="Install Kaspersky" Margin="5,0" ToolTip=""/>
-                            <CheckBox Name="WPFInstallDiscoveryAgent" Content="Install FreshService Agent" Margin="5,0" ToolTip=""/>
-                            <CheckBox Name="WPFInstallVPN" Content="Install VPN" Margin="5,0" ToolTip=""/>
-                            <CheckBox Name="WPFInstallSettings" Content="Derventio Settings" Margin="5,0" ToolTip=""/>
+                            <Button Name="WPFInstallKaspersky" Content="Install Kaspersky" HorizontalAlignment="Left" Margin="5" Padding="20,5" Width="300"/>
+                            <Button Name="WPFInstallDiscoveryAgent" Content="Install FreshService Agent" HorizontalAlignment="Left" Margin="5" Padding="20,5" Width="300"/>
+                            <Button Name="WPFInstallVPN" Content="Install VPN" HorizontalAlignment="Left" Margin="5" Padding="20,5" Width="300"/>
+                            <Button Name="WPFInstallSettings" Content="Derventio Settings" HorizontalAlignment="Left" Margin="5" Padding="20,5" Width="300"/>
                                 </StackPanel>
                             </Border>
                         <Border Grid.Row="1" Grid.Column="1">
