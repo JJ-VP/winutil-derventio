@@ -263,6 +263,34 @@
     "Order": "a049_",
     "Type": "300"
   },
+  "WPFInstallKaspersky": {
+    "Content": "Install Kaspersky",
+    "category": "Fixes",
+    "panel": "1",
+    "Order": "a046_",
+    "Type": "300"
+  },
+  "WPFInstallDiscoveryAgent": {
+    "Content": "Install FreshService Agent",
+    "category": "Fixes",
+    "panel": "1",
+    "Order": "a047_",
+    "Type": "300"
+  },
+  "WPFInstallVPN": {
+    "Content": "Install VPN",
+    "category": "Fixes",
+    "panel": "1",
+    "Order": "a048_",
+    "Type": "300"
+  },
+  "WPFInstallSettings": {
+    "Content": "Derventio Settings",
+    "category": "Fixes",
+    "panel": "1",
+    "Order": "a049_",
+    "Type": "300"
+  },
   "WPFPanelnetwork": {
     "Content": "Network Connections",
     "category": "Legacy Windows Panels",
