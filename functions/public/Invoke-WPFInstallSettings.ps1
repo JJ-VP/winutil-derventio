@@ -100,7 +100,7 @@ function Invoke-WPFInstallSettings {
     reg import $braveout
 
     Write-Host "Updating group policy..."
-    Invoke-GPUpdate
+    GPUpdate
     
     Write-Host "Derventio Preferences Setup!"
 }
