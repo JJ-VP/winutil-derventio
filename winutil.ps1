@@ -8,7 +8,7 @@
     Author         : Chris Titus @christitustech
     Runspace Author: @DeveloperDurp
     GitHub         : https://github.com/ChrisTitusTech
-    Version        : 24.07.31
+    Version        : 24.09.03
 #>
 param (
     [switch]$Debug,
@@ -45,7 +45,7 @@ Add-Type -AssemblyName System.Windows.Forms
 # Variable to sync between runspaces
 $sync = [Hashtable]::Synchronized(@{})
 $sync.PSScriptRoot = $PSScriptRoot
-$sync.version = "24.07.31"
+$sync.version = "24.09.03"
 $sync.configs = @{}
 $sync.ProcessRunning = $false
 
@@ -9244,6 +9244,14 @@ $sync.configs.feature = '{
     "type": "Button",
     "ButtonWidth": "300"
   },
+  "WPFInstallDrivers": {
+    "Content": "Print Drivers",
+    "category": "Fixes",
+    "panel": "1",
+    "Order": "a050_",
+    "type": "Button",
+    "ButtonWidth": "300"
+  },
   "WPFPanelnetwork": {
     "Content": "Network Connections",
     "category": "Legacy Windows Panels",
@@ -15166,6 +15174,7 @@ $inputXML =  '<Window x:Class="WinUtility.MainWindow"
                             <Button Name="WPFInstallDiscoveryAgent" Content="Install FreshService Agent" HorizontalAlignment="Left" Margin="5" Padding="20,5" Width="300"/>
                             <Button Name="WPFInstallVPN" Content="Install VPN" HorizontalAlignment="Left" Margin="5" Padding="20,5" Width="300"/>
                             <Button Name="WPFInstallSettings" Content="Derventio Settings" HorizontalAlignment="Left" Margin="5" Padding="20,5" Width="300"/>
+                            <Button Name="WPFInstallDrivers" Content="Print Drivers" HorizontalAlignment="Left" Margin="5" Padding="20,5" Width="300"/>
                                 </StackPanel>
                             </Border>
                         <Border Grid.Row="1" Grid.Column="1">
