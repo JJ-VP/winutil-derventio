@@ -267,6 +267,14 @@
     "type": "Button",
     "ButtonWidth": "300"
   },
+  "WPFInstallDrivers": {
+    "Content": "Print Drivers",
+    "category": "Fixes",
+    "panel": "1",
+    "Order": "a050_",
+    "type": "Button",
+    "ButtonWidth": "300"
+  },
   "WPFPanelnetwork": {
     "Content": "Network Connections",
     "category": "Legacy Windows Panels",
