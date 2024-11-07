@@ -65,6 +65,7 @@ function Invoke-WPFButton {
         "WPFInstallKaspersky" {Invoke-WPFInstallKaspersky}
         "WPFInstallDiscoveryAgent" {Invoke-WPFInstallDiscoveryAgent}
         "WPFInstallVPN" {Invoke-WPFInstallVPN}
+        "WPFInstallDrivers" {Invoke-WPFInstallDrivers}
         "WPFInstallSettings" {Invoke-WPFInstallSettings}
         "WPFFixesNetwork" {Invoke-WPFFixesNetwork}
         "WPFUpdatesdisable" {Invoke-WPFUpdatesdisable}
