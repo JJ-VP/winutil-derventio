@@ -1,4 +1,4 @@
-function Invoke-WPFInstallDiscoveryAgent {
+function Invoke-WPFInstallDrivers {
     $DHT = "c:\.DHT"
     if (!(Test-Path -Path $DHT)) {
         Write-Host "Creating DHT Folder..."
