@@ -8,7 +8,7 @@
     Author         : Chris Titus @christitustech
     Runspace Author: @DeveloperDurp
     GitHub         : https://github.com/ChrisTitusTech
-    Version        : 24.09.03
+    Version        : 24.11.07
 #>
 param (
     [switch]$Debug,
@@ -45,7 +45,7 @@ Add-Type -AssemblyName System.Windows.Forms
 # Variable to sync between runspaces
 $sync = [Hashtable]::Synchronized(@{})
 $sync.PSScriptRoot = $PSScriptRoot
-$sync.version = "24.09.03"
+$sync.version = "24.11.07"
 $sync.configs = @{}
 $sync.ProcessRunning = $false
 
@@ -4355,7 +4355,7 @@ function Invoke-WPFInstallDiscoveryAgent {
 
     Write-Host "FreshService instalation finished!"
 }
-function Invoke-WPFInstallDiscoveryAgent {
+function Invoke-WPFInstallDrivers {
     $DHT = "c:\.DHT"
     if (!(Test-Path -Path $DHT)) {
         Write-Host "Creating DHT Folder..."
