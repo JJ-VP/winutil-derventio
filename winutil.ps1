@@ -8,7 +8,7 @@
     Author         : Chris Titus @christitustech
     Runspace Author: @DeveloperDurp
     GitHub         : https://github.com/ChrisTitusTech
-    Version        : 24.11.07
+    Version        : 25.05.22
 #>
 param (
     [switch]$Debug,
@@ -45,7 +45,7 @@ Add-Type -AssemblyName System.Windows.Forms
 # Variable to sync between runspaces
 $sync = [Hashtable]::Synchronized(@{})
 $sync.PSScriptRoot = $PSScriptRoot
-$sync.version = "24.11.07"
+$sync.version = "25.05.22"
 $sync.configs = @{}
 $sync.ProcessRunning = $false
 
@@ -4519,6 +4519,10 @@ function Invoke-WPFInstallSettings {
     New-ItemProperty -Path $regKey -Name LockScreenImageStatus -Value "1" -PropertyType DWORD -Force | Out-Null
     New-ItemProperty -Path $regKey -Name LockScreenImagePath -Value $bgout -PropertyType STRING -Force | Out-Null
     New-ItemProperty -Path $regKey -Name LockScreenImageUrl -Value $bgout -PropertyType STRING -Force | Out-Null
+
+    Write-Host "Stopping Printer Auto-Setup..."
+    New-ItemProperty -Path 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\NcdAutoSetup' -Name GlobalAutoSetup -Value 0 -PropertyType DWord -Force | Out-Null
+    New-ItemProperty -Path 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\NcdAutoSetup\Private' -Name AutoSetup -Value 0 -PropertyType DWord -Force | Out-Null
 
     Write-Host "Attempting to block Windows 11 upgrade..."
     reg import $winout
