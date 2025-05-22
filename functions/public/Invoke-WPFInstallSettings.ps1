@@ -93,6 +93,10 @@ function Invoke-WPFInstallSettings {
     New-ItemProperty -Path $regKey -Name LockScreenImagePath -Value $bgout -PropertyType STRING -Force | Out-Null
     New-ItemProperty -Path $regKey -Name LockScreenImageUrl -Value $bgout -PropertyType STRING -Force | Out-Null
 
+    Write-Host "Stopping Printer Auto-Setup..."
+    New-ItemProperty -Path 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\NcdAutoSetup' -Name GlobalAutoSetup -Value 0 -PropertyType DWord -Force | Out-Null
+    New-ItemProperty -Path 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\NcdAutoSetup\Private' -Name AutoSetup -Value 0 -PropertyType DWord -Force | Out-Null
+
     Write-Host "Attempting to block Windows 11 upgrade..."
     reg import $winout
 
